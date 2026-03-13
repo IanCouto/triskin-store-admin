@@ -2,6 +2,24 @@
 
 Aplicação front-end do desafio técnico: painel administrativo de produtos com listagem, carrinho global, edição de produto e busca com debounce.
 
+## Escolhas do desafio
+
+Sempre que o desafio oferece alternativas, abaixo está a opção utilizada neste projeto:
+
+| Item | Opções do desafio | Escolha utilizada |
+|------|-------------------|-------------------|
+| **API / dados da listagem** | MockAPI, JSON Server, etc. | Mock local (`src/lib/mockProducts.ts`) quando não há backend; API real (Nest) quando `VITE_API_URL` está definido. |
+| **Estado global do carrinho** | Zustand, Context API, Jotai ou Redux | **Context API** |
+| **Formulário de edição** | Modal ou rota separada | **Modal** (`EditProductModal`) |
+| **Componente de edição** | EditProductModal ou EditPage | **EditProductModal** |
+| **Estilização (stack)** | Styled Components, Tailwind ou CSS Modules | **Tailwind CSS** |
+| **Requisições HTTP (stack)** | Axios ou Fetch | **Fetch** |
+| **Gerenciador de estado (stack)** | Context, Zustand, Redux, Jotai | **Context API** |
+| **Data fetching (extra)** | React Query ou SWR | **React Query** (TanStack Query) |
+| **Testes (extra)** | Vitest/Jest + RTL | **Vitest** + **React Testing Library** |
+| **Design system (extra)** | Radix ou Shadcn | **Shadcn** (estilo, com primitivos Radix) |
+| **Deploy (extra)** | Vercel ou Netlify | **Não implementado** |
+
 ## Tecnologias e bibliotecas
 
 - **React 18** + Hooks + TypeScript

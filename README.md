@@ -2,6 +2,60 @@
 
 Aplicação front-end do desafio técnico: painel administrativo de produtos com listagem, carrinho global, edição de produto e busca com debounce.
 
+---
+
+## Loja em produção
+
+A aplicação está publicada e pode ser acessada em:
+
+**[https://triskin-store-admin-six.vercel.app/](https://triskin-store-admin-six.vercel.app/)**
+
+Essa é a **loja ao vivo** (deploy na Vercel). Você pode testar todas as funcionalidades: listagem, adicionar ao carrinho, editar produto, busca com debounce e página do carrinho com alteração de quantidade.
+
+---
+
+## Loja em funcionamento (screenshots)
+
+As imagens abaixo mostram a loja em uso e as principais ações. *(Adicione as capturas em `docs/screenshots/` conforme o [README de screenshots](docs/screenshots/README.md).)*
+
+### Listagem de produtos
+
+Página inicial com produtos, preço, status (Ativo/Inativo), botões "Adicionar ao Carrinho" e "Editar", e campo de busca.
+
+![Listagem de produtos](docs/screenshots/listagem.png)
+
+### Página do carrinho (vazio)
+
+Estado vazio do carrinho com mensagem e link para voltar aos produtos.
+
+![Carrinho vazio](docs/screenshots/carrinho-vazio.png)
+
+### Página do carrinho (com itens)
+
+Carrinho com itens, alteração de quantidade (input e botões −/+), remoção e totalizador.
+
+![Carrinho com itens](docs/screenshots/carrinho-com-itens.png)
+
+### Modal de edição de produto
+
+Formulário de edição (descrição, código, valor, unidade) com botões Cancelar e Salvar.
+
+![Modal editar produto](docs/screenshots/modal-editar.png)
+
+### Feedback durante o envio
+
+Botão desabilitado e texto "Salvando..." com loader durante o envio do formulário.
+
+![Modal salvando](docs/screenshots/modal-salvando.png)
+
+### Busca com debounce
+
+Campo de busca e lista filtrada por nome do produto (debounce 500 ms).
+
+![Busca](docs/screenshots/busca.png)
+
+---
+
 ## Escolhas do desafio
 
 Sempre que o desafio oferece alternativas, abaixo está a opção utilizada neste projeto:

@@ -17,6 +17,6 @@ describe('CartPage', () => {
   it('shows empty state when cart is empty', () => {
     renderCartPage();
     expect(screen.getByTestId('cart-empty')).toBeInTheDocument();
-    expect(screen.getByText(/carrinho está vazio/i)).toBeInTheDocument();
+    expect(screen.getByText(/carrinho vazio/i)).toBeInTheDocument();
   });
 });

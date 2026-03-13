@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { vi } from 'vitest';
 import { CartProvider } from '@/contexts/CartContext';
@@ -44,5 +44,21 @@ describe('ProductItem', () => {
   it('has Add to Cart button', () => {
     renderWithCart(<ProductItem product={product} />);
     expect(screen.getByTestId('add-to-cart')).toHaveTextContent('Adicionar ao Carrinho');
+  });
+
+  it('adds to cart and shows loading state while adding', async () => {
+    renderWithCart(<ProductItem product={product} />);
+    const addBtn = screen.getByTestId('add-to-cart');
+    await userEvent.click(addBtn);
+    expect(addBtn).toBeDisabled();
+    await waitFor(() => {
+      expect(addBtn).not.toBeDisabled();
+    }, { timeout: 1000 });
+    expect(addBtn).toHaveTextContent('Adicionar ao Carrinho');
+  });
+
+  it('disables Add to Cart when product is inactive', () => {
+    renderWithCart(<ProductItem product={{ ...product, ativo: false }} />);
+    expect(screen.getByTestId('add-to-cart')).toBeDisabled();
   });
 });

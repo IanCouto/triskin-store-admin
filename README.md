@@ -18,7 +18,7 @@ Sempre que o desafio oferece alternativas, abaixo está a opção utilizada nest
 | **Data fetching (extra)** | React Query ou SWR | **React Query** (TanStack Query) |
 | **Testes (extra)** | Vitest/Jest + RTL | **Vitest** + **React Testing Library** |
 | **Design system (extra)** | Radix ou Shadcn | **Shadcn** (estilo, com primitivos Radix) |
-| **Deploy (extra)** | Vercel ou Netlify | **Não implementado** |
+| **Deploy (extra)** | Vercel ou Netlify | **Vercel** |
 
 ## Tecnologias e bibliotecas
 
@@ -113,3 +113,36 @@ O `vite.config.ts` está configurado para fazer proxy de `/api` para `http://loc
 - `Loader`, `ErrorMessage`
 
 Todos implementados e reutilizados conforme o modelo atômico acima.
+
+## Deploy na Vercel
+
+O projeto está configurado para deploy na Vercel (SPA com React Router).
+
+### Passo a passo
+
+1. **Acesse [vercel.com](https://vercel.com)** e faça login (GitHub recomendado).
+
+2. **Importe o repositório**
+   - Clique em **Add New…** → **Project**.
+   - Conecte o GitHub e selecione o repositório `triskin-store-admin` (ou o que contiver este frontend).
+   - Se o frontend estiver na raiz do repo, não altere **Root Directory**. Se estiver em uma pasta (ex.: `frontend`), defina **Root Directory** como `frontend`.
+
+3. **Configuração do build** (a Vercel costuma detectar automaticamente)
+   - **Framework Preset:** Vite  
+   - **Build Command:** `npm run build`  
+   - **Output Directory:** `dist`  
+   - O arquivo `vercel.json` na raiz já define isso e os rewrites para SPA.
+
+4. **Variáveis de ambiente (opcional)**  
+   Se quiser apontar para um backend em produção, adicione em **Settings → Environment Variables**:
+   - `VITE_API_URL` = URL base da API (ex.: `https://sua-api.fly.dev` ou `https://api.seudominio.com`).  
+   Deixe em branco para usar apenas o mock de produtos.
+
+5. **Deploy**  
+   Clique em **Deploy**. A cada push na branch conectada (ex.: `master`), a Vercel fará um novo deploy.
+
+### Comportamento no deploy
+
+- **Rotas** (`/`, `/carrinho`): o `vercel.json` redireciona todas para `index.html`, e o React Router trata no cliente.
+- **Sem `VITE_API_URL`**: a aplicação usa o mock local (lista de produtos estática).
+- **Com `VITE_API_URL`**: as chamadas de produtos vão para a API configurada (CORS deve permitir o domínio da Vercel).

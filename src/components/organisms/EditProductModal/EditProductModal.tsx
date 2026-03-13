@@ -147,9 +147,12 @@ export function EditProductModal({
             >
               Cancelar
             </Button>
-            <Button type="submit" disabled={submitting}>
+            <Button type="submit" disabled={submitting} aria-busy={submitting}>
               {submitting ? (
-                <Loader size="sm" className="border-primary-foreground border-t-transparent" />
+                <>
+                  <Loader size="sm" className="border-primary-foreground border-t-transparent" />
+                  Salvando...
+                </>
               ) : (
                 'Salvar'
               )}

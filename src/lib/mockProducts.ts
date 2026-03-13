@@ -25,7 +25,7 @@ export const MOCK_PRODUCTS: Product[] = [
     ncm: '85171210',
     cst: '00',
     cfop: '5102',
-    ativo: true,
+    ativo: false,
   },
   {
     id: 'mock-3',
@@ -47,7 +47,7 @@ export const MOCK_PRODUCTS: Product[] = [
     ncm: '61091000',
     cst: '00',
     cfop: '5102',
-    ativo: true,
+    ativo: false,
   },
   {
     id: 'mock-5',

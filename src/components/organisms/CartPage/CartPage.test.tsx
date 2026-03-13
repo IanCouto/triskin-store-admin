@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { fireEvent } from '@testing-library/react';
-import { BrowserRouter } from 'react-router-dom';
+import { TestRouter } from '@/test/test-utils';
 import { CartProvider, useCart } from '@/contexts/CartContext';
 import { CartPage } from './CartPage';
 import type { Product } from '@/types/product';
@@ -21,11 +21,11 @@ const mockProduct: Product = {
 
 function renderCartPage() {
   return render(
-    <BrowserRouter>
+    <TestRouter>
       <CartProvider>
         <CartPage />
       </CartProvider>
-    </BrowserRouter>
+    </TestRouter>
   );
 }
 
@@ -39,11 +39,11 @@ function CartPageWithItem({ product, quantity }: { product: Product; quantity: n
 
 function renderCartPageWithItem(product = mockProduct, quantity = 2) {
   return render(
-    <BrowserRouter>
+    <TestRouter>
       <CartProvider>
         <CartPageWithItem product={product} quantity={quantity} />
       </CartProvider>
-    </BrowserRouter>
+    </TestRouter>
   );
 }
 

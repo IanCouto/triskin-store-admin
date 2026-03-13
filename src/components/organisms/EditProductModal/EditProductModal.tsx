@@ -5,6 +5,7 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
+  DialogDescription,
   DialogFooter,
 } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
@@ -89,6 +90,9 @@ export function EditProductModal({
       <DialogContent showClose={!submitting}>
         <DialogHeader>
           <DialogTitle>Editar produto</DialogTitle>
+          <DialogDescription className="sr-only">
+            Formulário para editar descrição, código, valor e unidade do produto.
+          </DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-4">
           {error && <ErrorMessage message={error} />}

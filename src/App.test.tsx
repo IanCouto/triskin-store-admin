@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { BrowserRouter } from 'react-router-dom';
+import { TestRouter } from '@/test/test-utils';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { CartProvider } from '@/contexts/CartContext';
 import App from './App';
@@ -13,11 +13,11 @@ const queryClient = new QueryClient({
 function renderApp() {
   return render(
     <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
+      <TestRouter>
         <CartProvider>
           <App />
         </CartProvider>
-      </BrowserRouter>
+      </TestRouter>
     </QueryClientProvider>
   );
 }

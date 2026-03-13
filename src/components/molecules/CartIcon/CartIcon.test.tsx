@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { render, screen } from '@testing-library/react';
-import { BrowserRouter } from 'react-router-dom';
+import { TestRouter } from '@/test/test-utils';
 import { CartProvider, useCart } from '@/contexts/CartContext';
 import { CartIcon } from './CartIcon';
 import type { Product } from '@/types/product';
@@ -27,21 +27,21 @@ function CartIconWithItem({ product, quantity }: { product: Product; quantity: n
 
 function renderCartIcon() {
   return render(
-    <BrowserRouter>
+    <TestRouter>
       <CartProvider>
         <CartIcon />
       </CartProvider>
-    </BrowserRouter>
+    </TestRouter>
   );
 }
 
 function renderCartIconWithItems(product = mockProduct, quantity = 2) {
   return render(
-    <BrowserRouter>
+    <TestRouter>
       <CartProvider>
         <CartIconWithItem product={product} quantity={quantity} />
       </CartProvider>
-    </BrowserRouter>
+    </TestRouter>
   );
 }
 

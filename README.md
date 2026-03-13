@@ -16,43 +16,31 @@ Essa é a **loja ao vivo** (deploy na Vercel). Você pode testar todas as funcio
 
 ## Loja em funcionamento (screenshots)
 
-As imagens abaixo mostram a loja em uso e as principais ações. *(Adicione as capturas em `docs/screenshots/` conforme o [README de screenshots](docs/screenshots/README.md).)*
+As imagens abaixo mostram a loja em uso e as principais ações.
 
 ### Listagem de produtos
 
 Página inicial com produtos, preço, status (Ativo/Inativo), botões "Adicionar ao Carrinho" e "Editar", e campo de busca.
 
-![Listagem de produtos](docs/screenshots/listagem.png)
+![Listagem de produtos](<img width="2559" height="1354" alt="image" src="https://github.com/user-attachments/assets/cbb37f5b-78d0-48f1-be98-983af95f4b1d" />)
 
 ### Página do carrinho (vazio)
 
 Estado vazio do carrinho com mensagem e link para voltar aos produtos.
 
-![Carrinho vazio](docs/screenshots/carrinho-vazio.png)
+![Carrinho vazio](<img width="2559" height="571" alt="image" src="https://github.com/user-attachments/assets/69a86ece-c081-43ad-9f1d-c18be3c9d925" />)
 
 ### Página do carrinho (com itens)
 
 Carrinho com itens, alteração de quantidade (input e botões −/+), remoção e totalizador.
 
-![Carrinho com itens](docs/screenshots/carrinho-com-itens.png)
+![Carrinho com itens](<img width="2559" height="1304" alt="image" src="https://github.com/user-attachments/assets/0e6cb15b-2b22-4759-ad5d-ba1dbd10dc40" />)
 
 ### Modal de edição de produto
 
 Formulário de edição (descrição, código, valor, unidade) com botões Cancelar e Salvar.
 
-![Modal editar produto](docs/screenshots/modal-editar.png)
-
-### Feedback durante o envio
-
-Botão desabilitado e texto "Salvando..." com loader durante o envio do formulário.
-
-![Modal salvando](docs/screenshots/modal-salvando.png)
-
-### Busca com debounce
-
-Campo de busca e lista filtrada por nome do produto (debounce 500 ms).
-
-![Busca](docs/screenshots/busca.png)
+![Modal editar produto](<img width="2559" height="1348" alt="image" src="https://github.com/user-attachments/assets/71e8f7a1-82ec-4dac-9a31-f7e68032a742" />)
 
 ---
 
